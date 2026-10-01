@@ -59,10 +59,11 @@ A failed run publishes nothing; fix the problem, delete the tag, and tag again.
 
 ## Provenance
 
-npm attaches provenance (a public link from each version to the commit and workflow run
-that built it) only when the source repository is public. While this repo is private,
-releases publish without it. Making the repository public later adds it automatically,
-with no workflow change.
+npm attaches provenance (a signed, public link from each version to the commit and
+workflow run that built it) only when the source repository is public, as this one is.
+Every release from the workflow carries it; 0.1.0 does not, because it was published by
+hand. Making the repository private again would silently drop provenance from later
+releases.
 
 Sources: [npm trusted publishing](https://docs.npmjs.com/trusted-publishers) (updated
 2026-09-30), [unpublish policy](https://docs.npmjs.com/policies/unpublish) (no date

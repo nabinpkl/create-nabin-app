@@ -1,16 +1,29 @@
-# nabin-template
+# create-nabin-app
 
-Early-stage project. What it is for is in [PRD.md](PRD.md).
-
-## Getting started
-
-Requires [just](https://github.com/casey/just).
+Scaffolds a project sized to its requirements, without prompts. Pass requirement flags and
+you get the smallest stack that meets them, already wired, formatted, and passing its
+own `just check`.
 
 ```sh
-just          # list tasks
-just check    # lint, typecheck, test
-just dev      # run locally
+create-nabin-app spa                                     # Vite + React + Tailwind
+create-nabin-app next-frontend --routes --with zustand   # Next.js + shadcn (Base UI)
+create-nabin-app fullstack --routes --api                # + Hono on Bun + shared Zod
+create-nabin-app evals --python                          # uv + Ruff + ty + pytest
+create-nabin-app x --routes --api --dry-run --json       # preview, write nothing
 ```
 
-Contributor and agent conventions are in [AGENTS.md](AGENTS.md). Decisions are recorded in
+`create-nabin-app --help` is the full flag reference. Why it exists: [PRD.md](PRD.md).
+How it works: [SPEC.md](SPEC.md).
+
+## Running it
+
+Requires Node 24+, pnpm and just. Generated projects also need Bun (for `--api`) or uv
+(for `--python`).
+
+```sh
+just install
+just run my-app --routes      # run from source
+```
+
+Contributor and agent conventions: [AGENTS.md](AGENTS.md). Decisions:
 [docs/adr/](docs/adr/).

@@ -1,0 +1,28 @@
+{
+  "name": "create-nabin-app",
+  "version": "0.1.0",
+  "description": "Non-interactive project scaffolder that sizes the stack to the requirement.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "create-nabin-app": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test 'test/**/*.test.ts'",
+    "lint": "biome check ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.0",
+    "@types/node": "^24",
+    "typescript": "^7.0.0"
+  }
+}

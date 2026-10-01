@@ -27,8 +27,7 @@ e2e *cases:
 
 # Compile to dist/ for the published bin
 build:
-    rm -rf dist
-    pnpm exec tsc -p tsconfig.build.json
+    pnpm run build
 
 # Regenerate templates/shadcn-* from the upstream shadcn CLI
 refresh-shadcn:

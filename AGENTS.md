@@ -9,11 +9,13 @@ All tasks go through the [justfile](justfile). Run `just` to list recipes.
 
 - `just check`: Biome, typecheck, unit tests. Must pass before a commit.
 - `just e2e [case ...]`: scaffold every stack for real, then run each generated project's
-  own `just check` and `just build`, plus an API smoke test. Run it after touching
+  own `just check`, `just build` and `just dev` (plus /api/health with --api). Run it after touching
   `templates/`, `src/generate/`, or `src/versions.ts`. Needs network; takes minutes.
 - `just run <dir> [flags]`: run the CLI from source.
 - `just refresh-shadcn`: regenerate the vendored shadcn layers from upstream.
 - `just build`: compile `src/` to `dist/` for the published bin.
+- Releasing to npm: [docs/releasing.md](docs/releasing.md). Never publish from a dirty
+  tree or skip `just e2e` before a release.
 
 ## Layout
 

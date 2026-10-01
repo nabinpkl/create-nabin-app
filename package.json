@@ -2,8 +2,29 @@
   "name": "create-nabin-app",
   "version": "0.1.0",
   "description": "Non-interactive project scaffolder that sizes the stack to the requirement.",
-  "type": "module",
+  "keywords": [
+    "create",
+    "scaffold",
+    "cli",
+    "nextjs",
+    "vite",
+    "shadcn",
+    "hono",
+    "bun",
+    "uv",
+    "agents"
+  ],
+  "author": "nabinpkl",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabinpkl/create-nabin-app.git"
+  },
+  "homepage": "https://github.com/nabinpkl/create-nabin-app#readme",
+  "bugs": {
+    "url": "https://github.com/nabinpkl/create-nabin-app/issues"
+  },
+  "type": "module",
   "bin": {
     "create-nabin-app": "dist/cli.js"
   },
@@ -14,11 +35,10 @@
   "engines": {
     "node": ">=24"
   },
+  "packageManager": "pnpm@11.15.1",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "typecheck": "tsc --noEmit",
-    "test": "node --test 'test/**/*.test.ts'",
-    "lint": "biome check ."
+    "build": "node -e \"fs.rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.build.json",
+    "prepack": "pnpm run build"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.0",

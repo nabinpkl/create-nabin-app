@@ -26,4 +26,8 @@ just run my-app --routes      # run from source
 ```
 
 Contributor and agent conventions: [AGENTS.md](AGENTS.md). Decisions:
-[docs/adr/](docs/adr/).
+[docs/adr/](docs/adr/). Releasing: [docs/releasing.md](docs/releasing.md).
+
+## License
+
+MIT

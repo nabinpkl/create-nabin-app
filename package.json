@@ -1,6 +1,6 @@
 {
   "name": "create-nabin-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Non-interactive project scaffolder that sizes the stack to the requirement.",
   "keywords": [
     "create",
